@@ -1,0 +1,51 @@
+.destacados-wrapper {
+  position: relative;
+  padding-bottom: 40px; 
+}
+
+.img-wrapper {
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-wrapper img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.carrusel-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.slick-dots {
+  bottom: -25px;
+}
+
+.slick-dots li button:before {
+  color: #000; 
+  font-size: 12px;
+}
+
+.carrusel-card {
+  border: none !important;
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.carrusel-card:hover {
+  transform: scale(1.03);
+  background-color: rgba(255, 255, 255, 0.8); /* blanco suave semitransparente */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);   /* leve sombra */
+}
+
