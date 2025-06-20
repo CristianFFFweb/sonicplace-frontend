@@ -29,7 +29,7 @@ function Catalogo() {
                 <p className="text-muted">${prod.precio}</p>
                 <p className="text-muted">Stock: {prod.stock}</p>
                 <p className="text-muted">Estado: {prod.estado}</p>
-                <p className="text-sm text-gray-500">Publicado por: {prod.publicado_por}</p>
+                <p className="text-sm text-gray-500">Publicado por: {prod.fullname}</p>
                 
                 <Link to={`/producto/products/${prod.id}`} className="btn btn-outline-dark w-100">
                   Ver detalles
