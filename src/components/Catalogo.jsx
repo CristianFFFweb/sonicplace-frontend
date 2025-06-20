@@ -12,6 +12,7 @@ function Catalogo() {
       .then(res => setProductos(res.data))
       .catch(err => console.error(err));
   }, []);
+  console.log(productos);
 
   return (
     <div className="container mt-5">
@@ -29,6 +30,7 @@ function Catalogo() {
                 <p className="text-muted">Stock: {prod.stock}</p>
                 <p className="text-muted">Estado: {prod.estado}</p>
                 <p className="text-sm text-gray-500">Publicado por: {prod.publicado_por}</p>
+                
                 <Link to={`/producto/products/${prod.id}`} className="btn btn-outline-dark w-100">
                   Ver detalles
                 </Link>
