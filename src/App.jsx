@@ -15,6 +15,7 @@ import AgregarProducto from './components/AgregarProducto.jsx'
 import AdminForm from './components/AdminForm.jsx'
 import RutaAdmin from './components/ProtegeAdmin.jsx'
 import ResultadosBusqueda from './pages/ResultadosBusqueda.jsx'
+import AdminPanel from './components/AdminPanel.jsx'
 
 
 function App() {
