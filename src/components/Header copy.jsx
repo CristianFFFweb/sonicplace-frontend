@@ -11,8 +11,9 @@ function Header() {
   const { carrito } = useCarrito();
   const { usuario, logout } = useAuth(); 
   const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-
-  const esAdmin = usuario?.email === 'sonicplaceAdmin@sonicplace.com';
+  
+ 
+ 
 
   return (
     <header style={{ backgroundColor: '#fdd62c' }} className="border-bottom py-3">
@@ -37,24 +38,21 @@ function Header() {
           <Link className="nav-link" to="/catalogo">Publicados por Usuarios</Link>
           <Link className="nav-link" to="/todos">Ver Todos</Link>
 
-          {esAdmin && (
-            <Link to="/admin-panel" className="btn btn-warning d-flex align-items-center gap-2">
-              <FaUser /> Admin Panel
-            </Link>
-          )}
-
+          
           {usuario ? (
             <>
               <span className="text-dark">Hola, {usuario.email}</span>
-              <Link to="/perfil" className="btn btn-outline-secondary d-flex align-items-center gap-2">
-                <FaUser /> Perfil
-              </Link>
+             <Link to="/perfil" className="btn btn-outline-secondary d-flex align-items-center gap-2">
+             <FaUser /> Perfil</Link>
               <Link to="/">
-                <button onClick={logout} className="btn btn-outline-danger d-flex align-items-center gap-2">
-                  <FaSignOutAlt />
-                  Salir
-                </button>
+              <button onClick={logout} className="btn btn-outline-danger d-flex align-items-center gap-2">
+              
+                <FaSignOutAlt />
+              Salir
+              </button>
+
               </Link>
+              
             </>
           ) : (
             <>
@@ -68,7 +66,9 @@ function Header() {
               </Link>
             </>
           )}
+          
         </div>
+        
       </div>
     </header>
   );
