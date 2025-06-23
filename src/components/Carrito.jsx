@@ -31,13 +31,19 @@ function Carrito() {
     try {
       // 1. Actualizar stock en el backend para cada producto
       await Promise.all(
-        carrito.map((prod) => {
-          const nuevoStock = prod.stock - prod.cantidad;
-          return axios.patch(`${API_BASE_URL}/api/products/${prod.id}`, {
-            stock: nuevoStock < 0 ? 0 : nuevoStock,
-          });
-        })
-      );
+  carrito.map((prod) => {
+    const nuevoStock = prod.stock - prod.cantidad;
+    let ruta = "";
+
+    if (prod.tabla === "products") ruta = "products";
+    else if (prod.tabla === "ofertas") ruta = "ofertas";
+    else if (prod.tabla === "destacados") ruta = "destacados";
+
+    return axios.patch(`${API_BASE_URL}/api/${ruta}/${prod.id}`, {
+      stock: nuevoStock < 0 ? 0 : nuevoStock,
+    });
+  })
+);
 
       // 2. Simular compra exitosa
       alert('¡Gracias por tu compra! 🎉');
