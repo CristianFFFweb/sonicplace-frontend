@@ -33,7 +33,7 @@ function Carrito() {
       await Promise.all(
         carrito.map((prod) => {
           const nuevoStock = prod.stock - prod.cantidad;
-          return axios.patch(`${API_BASE_URL}/catalogo/${prod.id}`, {
+          return axios.patch(`${API_BASE_URL}/api/catalogo/${prod.id}`, {
             stock: nuevoStock < 0 ? 0 : nuevoStock,
           });
         })
