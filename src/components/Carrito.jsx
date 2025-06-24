@@ -84,7 +84,7 @@ function Carrito() {
                 <p className="mb-1">Precio: ${prod.precio}</p>
                 <div className="d-flex align-items-center">
                   <button
-                    onClick={() => quitarDelCarrito(prod.id)}
+                    onClick={() => quitarDelCarrito(prod.id , prod.tabla)}
                     className="btn btn-sm btn-outline-secondary me-2"
                   >
                     -
@@ -104,7 +104,7 @@ function Carrito() {
                 )}
               </div>
               <button
-                onClick={() => eliminarDelCarrito(prod.id)}
+                onClick={() => eliminarDelCarrito(prod.id , prod.tabla)}
                 className="btn btn-outline-danger ms-3"
               >
                 Eliminar
